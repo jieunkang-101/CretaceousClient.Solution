@@ -1,9 +1,12 @@
 @model CretaceousClient.Models.Animal
 
-<h4>Add a new Animal</h4>
+<h4>Edit</h4>
 
 @using (Html.BeginForm())
 {
+  
+  @Html.HiddenFor(model => model.AnimalId)
+
   @Html.LabelFor(model => model.Name)
   @Html.TextBoxFor(model => model.Name, new { @class = "form-control"})
 
@@ -16,5 +19,5 @@
   @Html.LabelFor(model => model.Gender)
   @Html.TextBoxFor(model => model.Gender, new { @class = "form-control"})
   
-  <input type="submit" value="Add" class="btn btn-outline-info" />
+  <input type="submit" value="Save" class="btn btn-outline-info" />
 }

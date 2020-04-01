@@ -41,12 +41,20 @@ namespace CretaceousClient.Controllers
     }
 
     [HttpPost]
-    public IActionResult Details(int id, Animal animal)
+    public IActionResult Edit(int id, Animal animal)
     {
       animal.AnimalId = id;
       Animal.Put(animal);
-      return RedirectToAction("Details", id);
+      return RedirectToAction("Index");
     }
+
+    // [HttpPost]
+    // public IActionResult Details(int id, Animal animal)
+    // {
+    //   animal.AnimalId = id;
+    //   Animal.Put(animal);
+    //   return RedirectToAction("Details", id);
+    // }
 
 
     public IActionResult Delete(int id)
