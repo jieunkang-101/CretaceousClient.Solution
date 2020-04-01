@@ -3,14 +3,18 @@
 <ol>
 @foreach (Animal animal in Model)
 {
-    <ul>
-        <li>ID: @animal.AnimalId</li>
-        <li>Name: @animal.Name</li>
-        <li>Species: @animal.Species</li>
-        <li>Age: @animal.Age</li>
-        <li>Gender: @animal.Gender</li>
-    </ul>
-    <a href="/Animals/Details/@(animal.AnimalId)"><p>View Details</p></a>
-    <br>
+  <ul>
+    <li>ID: @animal.AnimalId</li>
+    <li>Name: @animal.Name</li>
+    <li>Species: @animal.Species</li>
+    <li>Age: @animal.Age</li>
+    <li>Gender: @animal.Gender</li>
+  </ul>
+  <a href="/Animals/Details/@(animal.AnimalId)"><p>View Details</p></a>
+  @using (Html.BeginForm())
+  {
+    <input type="submit" value="Delete" class = "btn btn-outline-info" />
+  }
+  <br>
 }
 </ol>
