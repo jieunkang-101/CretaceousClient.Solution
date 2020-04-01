@@ -43,7 +43,7 @@ namespace CretaceousClient.Controllers
       return RedirectToAction("Details", id);
     }
 
-    [HttpPost]
+
     public IActionResult Delete(int id)
     {
       Animal.Delete(id);

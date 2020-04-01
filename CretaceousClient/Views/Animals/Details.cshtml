@@ -1,3 +1,7 @@
 @using CretaceousClient.Models
 
 <h1>@Model.Name Details:</h1>
+
+
+
+@Html.ActionLink("Delete Animal", "Delete", new { id = Model.AnimalId }, new { @class = "btn btn-outline-info"})

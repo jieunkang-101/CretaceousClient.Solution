@@ -11,10 +11,6 @@
     <li>Gender: @animal.Gender</li>
   </ul>
   <a href="/Animals/Details/@(animal.AnimalId)"><p>View Details</p></a>
-  @using (Html.BeginForm())
-  {
-    <input type="submit" value="Delete" class = "btn btn-outline-info" />
-  }
   <br>
 }
 </ol>
