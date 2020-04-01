@@ -18,10 +18,21 @@ namespace CretaceousClient.Models
       var apiCallTask = ApiHelper.GetAll();
       var result = apiCallTask.Result;
 
-      JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(result);
+      JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(result); //The API call results in a JSON array
       List<Animal> animalList = JsonConvert.DeserializeObject<List<Animal>>(jsonResponse.ToString());
 
       return animalList;
+    }
+
+    public static Animal GetDetails(int id)
+    {
+      var apiCallTask = ApiHelper.Get(id);
+      var result = apiCallTask.Result;
+
+      JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);//The API call results in a JSON object
+      Animal animal = JsonConvert.DeserializeObject<Animal>(jsonResponse.ToString());
+
+      return animal;
     }
   }
 }
